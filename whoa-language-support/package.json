@@ -1,0 +1,55 @@
+{
+    "name": "whoa",
+    "displayName": "whoa",
+    "description": "whoa",
+    "version": "0.0.1",
+    "publisher": "brainsandspace",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "markdown",
+                "aliases": [
+                    "Markdown",
+                    "markdown"
+                ],
+                "extensions": [
+                    ".md",
+                    ".markdown",
+                    ".whoa",
+                    ".whoah"
+                ],
+                "configuration": "./language-configuration-markdown.json"
+            },
+            {
+                "id": "whoa",
+                "aliases": [
+                    "Whoa",
+                    "whoa"
+                ],
+                "extensions": [
+                    ".whoa",
+                    ".whoah"
+                ],
+                "configuration": "./language-configuration-whoa.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "markdown",
+                "scopeName": "text.html.markdown",
+                "path": "./syntaxes/markdown.tmLanguage"
+            },
+            {
+                "language": "whoa",
+                "scopeName": "text.html.markdown.whoa",
+                "path": "./syntaxes/whoa.tmLanguage"
+            }
+        ]
+    }
+}
