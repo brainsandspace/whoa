@@ -11,13 +11,8 @@ module.exports = {
       {
         test: /\.whoah?/,
         use: [
-          { loader: 'html-loader' },
           { loader: path.resolve('../index.js') },
         ],
-      },
-      {
-        test: /\.md?/,
-        use: [{ loader: 'raw-loader' }],
       },
       {
         test: /\.js$/, // Transform all .js files required somewhere with Babel

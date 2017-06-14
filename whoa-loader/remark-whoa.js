@@ -6,21 +6,21 @@ const tokenizeSearch = require('./tokenizers/search.js');
 
 function whoa() {
   var Parser = this.Parser;
-  var tokenizers = Parser.prototype.inlineTokenizers;
-  var methods = Parser.prototype.inlineMethods;
+  var inlineTokenizers = Parser.prototype.inlineTokenizers;
+  var inlineMethods = Parser.prototype.inlineMethods;
 
-  tokenizers.ellipsis = tokenizeEllipsis;
-  tokenizers.wordChoice = tokenizeWordChoice;
-  tokenizers.tangent = tokenizeTangent;
-  tokenizers.normative = tokenizeNormative;
-  tokenizers.search = tokenizeSearch;
+  inlineTokenizers.ellipsis = tokenizeEllipsis;
+  inlineTokenizers.wordChoice = tokenizeWordChoice;
+  inlineTokenizers.tangent = tokenizeTangent;
+  inlineTokenizers.normative = tokenizeNormative;
+  inlineTokenizers.search = tokenizeSearch;
 
   /* Run my tokenizers just before `text`. */
-  methods.splice(methods.indexOf('text'), 0, 'ellipsis');
-  methods.splice(methods.indexOf('text'), 0, 'wordChoice');
-  methods.splice(methods.indexOf('text'), 0, 'normative');
-  methods.splice(methods.indexOf('text'), 0, 'tangent');
-  methods.splice(methods.indexOf('text'), 0, 'search');
+  inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'ellipsis');
+  inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'wordChoice');
+  inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'normative');
+  inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'tangent');
+  inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'search');
 }
 
 module.exports = whoa;

@@ -14,14 +14,20 @@ function tokenizeNormative(eat, value, silent) {
         return true;
       }
       console.log('match 1', match[1]);
+      console.log(eat.now());
+      const now = eat.now();
+
       return eat(match[0])({
         type: 'normative',
         children: [
+          { type: 'text', value: 'I should ' },
+          ...this.tokenizeInline(match[1].replace('I should ', ''), now),
+        ] /*[
           {
             value: match[1].trim(),
             type: 'text',
           },
-        ],
+        ],*/,
       });
     }
   }

@@ -6,6 +6,10 @@ const react = require('react')
 const remarkReact = require('remark-react');
 const fm = require('front-matter');
 
+const whoaFile = require('./sample.whoa');
+console.log('whoaFile', whoaFile)
+console.log('whoaFile.content.children', whoaFile.content.children)
+
 const remarkWhoa = require('../remark-whoa.js');
 
 const rawMarkup = `---
@@ -34,7 +38,6 @@ const foo = (bar) => {
 };
 \`\`\`
 
-🔎etymology of jot🔍
 
 **Just** is a weird word.
 

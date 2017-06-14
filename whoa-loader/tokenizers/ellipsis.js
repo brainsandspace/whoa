@@ -1,5 +1,4 @@
 function tokenizeEllipsis(eat, value, silent) {
-  var match = /^@(\w+)/.exec(value);
   var match = /(\.\.\.)/.exec(value);
 
   var index = 0;

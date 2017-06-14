@@ -15,14 +15,17 @@ function tokenizeSearch(eat, value, silent) {
       if (silent) {
         return true;
       }
+      console.log('eat.now()', eat.now())
       return eat(match[0])({
         type: 'search',
-        children: [
+        children: this.tokenizeInline(
+          match[1], eat.now()
+        ) /*[
           {
             value: match[1].trim(),
             type: 'text',
           },
-        ],
+        ],*/,
       });
     }
   }

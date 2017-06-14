@@ -12,12 +12,13 @@ function tokenizeTangent(eat, value, silent) {
       console.log('match 1', match[1]);
       return eat(match[0])({
         type: 'tangent',
-        children: [
+        children: this.tokenizeInline(match[1], eat.now()),
+        /*[
           {
-            value: match[1].trim(),
             type: 'text',
+            value: match[1].trim(),
           },
-        ],
+        ],*/
       });
     }
   }
