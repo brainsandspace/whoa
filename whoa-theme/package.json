@@ -1,0 +1,32 @@
+{
+    "name": "whoa-theme",
+    "displayName": "whoa-theme",
+    "version": "0.1.6",
+    "description": "color theme for dot-whoa",
+    "publisher": "davvidbaker",
+    "engines": {
+        "vscode": "^0.10.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/davvidbaker/whoa-theme.git"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "whoa-theme",
+                "uiTheme": "vs",
+                "path": "./themes/whoa_2.json"
+            }
+        ]
+    },
+    "author": "davvidbaker",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/davvidbaker/whoa-theme/issues"
+    },
+    "homepage": "https://github.com/davvidbaker/whoa-theme#readme"
+}
