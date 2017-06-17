@@ -61,6 +61,14 @@
 					<key>include</key>
 					<string>#separator</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#frontmatter</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#search</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -523,9 +531,17 @@
 					<key>include</key>
 					<string>#ampersand</string>
 				</dict>
-                <dict>
+        <dict>
 					<key>include</key>
 					<string>#tangent</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#frontmatter</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#search</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -649,6 +665,14 @@
                 <dict>
 					<key>include</key>
 					<string>#tangent</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#frontmatter</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#search</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -899,6 +923,14 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#frontmatter</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#search</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#bracket</string>
 				</dict>
 				<dict>
@@ -1040,6 +1072,14 @@
                 <dict>
 					<key>include</key>
 					<string>#tangent</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#frontmatter</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#search</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1382,18 +1422,18 @@
 			<string>markup.raw.inline.markdown</string>
 		</dict>
 
-		<key>separator</key>
+		<!--<key>separator</key>
 		<dict>
 			<key>match</key>
 			<string>\G[ ]{,3}([-*_])([ ]{,2}\1){2,}[ \t]*$\n?</string>
 			<key>name</key>
 			<string>meta.separator.markdown</string>
-		</dict>
+		</dict>-->
 
         <!-- whoah stuff-->
         
-        <!--I don't quite know exactly how this works, but it works.-->
-        <key>tangent</key>
+		<!--I don't quite know exactly how this works, but it works.-->
+    <key>tangent</key>
 		<dict>
 			<key>begin</key>
 			<string>(\|-)</string>
@@ -1409,6 +1449,191 @@
 			<string>(-\|)</string>
 			<key>name</key>
 			<string>markup.tangent.whoa</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>applyEndPatternLast</key>
+					<integer>1</integer>
+					<key>begin</key>
+					<string>(?=&lt;[^&gt;]*?&gt;)</string>
+					<key>end</key>
+					<string>(?&lt;=&gt;)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#ampersand</string>
+				</dict>
+                <dict>
+					<key>include</key>
+					<string>#italic</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bracket</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bold_italic</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bold</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#image-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inet</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-email</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#image-ref</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref-literal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>frontmatter</key>
+		<dict>
+			<key>begin</key>
+			<string>(---)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.frontmatter.whoa</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(---)</string>
+			<key>name</key>
+			<string>markup.frontmatter.whoa</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>applyEndPatternLast</key>
+					<integer>1</integer>
+					<key>begin</key>
+					<string>(?=&lt;[^&gt;]*?&gt;)</string>
+					<key>end</key>
+					<string>(?&lt;=&gt;)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#ampersand</string>
+				</dict>
+                <dict>
+					<key>include</key>
+					<string>#italic</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bracket</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bold_italic</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bold</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#image-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-inet</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-email</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#image-ref</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref-literal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#link-ref</string>
+				</dict>
+			</array>
+		</dict>
+
+
+		<key>search</key>
+		<dict>
+			<key>begin</key>
+			<string>(🔎)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.search.whoa</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(🔍)</string>
+			<key>name</key>
+			<string>markup.search.whoa</string>
 			<key>patterns</key>
 			<array>
 				<dict>
