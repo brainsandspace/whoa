@@ -1,3 +1,8 @@
+---
+Am: 'stupid'
+---
+
+
 # whoa-loader 🎆-🔄
 
 Webpack loader for .whoa files.
@@ -19,3 +24,9 @@ TODO
 - [ ] extensive unit testing 😑 ⚠️
 - [ ] example in here 💡
 - [ ] documentation 📖
+
+
+    ```
+      this is code
+
+    ```
