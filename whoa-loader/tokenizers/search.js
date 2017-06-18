@@ -15,7 +15,6 @@ function tokenizeSearch(eat, value, silent) {
       if (silent) {
         return true;
       }
-      console.log('eat.now()', eat.now())
       return eat(match[0])({
         type: 'search',
         children: this.tokenizeInline(

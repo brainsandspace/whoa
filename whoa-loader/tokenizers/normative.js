@@ -13,8 +13,6 @@ function tokenizeNormative(eat, value, silent) {
       if (silent) {
         return true;
       }
-      console.log('match 1', match[1]);
-      console.log(eat.now());
       const now = eat.now();
 
       return eat(match[0])({

@@ -1,5 +1,5 @@
 {
-  "name": "dot-whoa",
+  "name": "whoa-loader",
   "version": "0.0.0",
   "description": "not sure yet",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "author": "David Baker",
   "license": "MIT",
   "dependencies": {
+    "front-matter": "^2.1.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "remark": "^7.0.0",

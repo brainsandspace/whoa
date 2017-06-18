@@ -26,7 +26,6 @@ function tokenizeEllipsis(eat, value, silent) {
 }
 
 function locateEllipsis(value, fromIndex) {
-  console.log(value.indexOf('...', fromIndex))
   return value.indexOf('...', fromIndex);
 }
 

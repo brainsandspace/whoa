@@ -9,7 +9,6 @@ function tokenizeTangent(eat, value, silent) {
       if (silent) {
         return true;
       }
-      console.log('match 1', match[1]);
       return eat(match[0])({
         type: 'tangent',
         children: [
