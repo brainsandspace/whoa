@@ -1,6 +1,5 @@
 const frontmatter = require('front-matter');
 const unified = require('unified');
-const remark = require('remark');
 const remarkParse = require('remark-parse');
 const remarkWhoa = require('./remark-whoa.js');
 

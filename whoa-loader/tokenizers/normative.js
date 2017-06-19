@@ -1,6 +1,8 @@
 /**
  * A normative―here―is a statement that begins with I should.
  */
+const shortid = require('shortid');
+
 
 function tokenizeNormative(eat, value, silent) {
   var match = /(I\sshould[^.]*\.)/.exec(value);
@@ -17,6 +19,7 @@ function tokenizeNormative(eat, value, silent) {
 
       return eat(match[0])({
         type: 'normative',
+        id: shortid.generate(),
         children: [
           { type: 'text', value: 'I should ' },
           ...this.tokenizeInline(match[1].replace('I should ', ''), now),

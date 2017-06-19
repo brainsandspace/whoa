@@ -11,11 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "front-matter": "^2.1.2",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "remark": "^7.0.0",
     "remark-parse": "^3.0.0",
-    "remark-react": "^4.0.0",
+    "shortid": "^2.2.8",
     "unified": "^6.1.1"
   },
   "devDependencies": {
