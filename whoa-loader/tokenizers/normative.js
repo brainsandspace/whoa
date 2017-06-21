@@ -19,7 +19,7 @@ function tokenizeNormative(eat, value, silent) {
 
       return eat(match[0])({
         type: 'normative',
-        id: shortid.generate(),
+        id: `normative-${shortid.generate()}`,
         children: [
           { type: 'text', value: 'I should ' },
           ...this.tokenizeInline(match[1].replace('I should ', ''), now),
