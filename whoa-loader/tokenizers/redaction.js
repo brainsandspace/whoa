@@ -4,7 +4,7 @@
 const shortid = require('shortid');
 
 function tokenizeRedaction(eat, value, silent) {
-  var match = /🕵{(.*)}/.exec(value);
+  var match = /🕵{([^🕵]*)}/.exec(value);
   var index = 0;
   // value.charAt(index) was not working with emoji...
   character = value.slice(index, 2);
