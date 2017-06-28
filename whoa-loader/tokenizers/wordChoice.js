@@ -1,3 +1,10 @@
+/**
+ * A wordChoice is either 
+ * a word like word(?)
+ * or up to three words like {word1, word2, word3}(?)
+ * 
+ */
+
 function tokenizeWordChoice(eat, value, silent) {
   // var match = /^@(\w+)/.exec(value);
   var match = /{(.*)}\(\?\)|^(\w*)\(\?\)/.exec(value);

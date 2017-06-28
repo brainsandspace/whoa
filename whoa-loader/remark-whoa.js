@@ -1,3 +1,4 @@
+const tokenizeRevision = require('./tokenizers/revision.js');
 const tokenizeRedaction = require('./tokenizers/redaction.js');
 const tokenizeEllipsis = require('./tokenizers/ellipsis.js');
 const tokenizeWordChoice = require('./tokenizers/wordChoice.js');
@@ -10,6 +11,7 @@ function whoa() {
   var inlineTokenizers = Parser.prototype.inlineTokenizers;
   var inlineMethods = Parser.prototype.inlineMethods;
 
+  inlineTokenizers.revision = tokenizeRevision;
   inlineTokenizers.redaction = tokenizeRedaction;
   inlineTokenizers.ellipsis = tokenizeEllipsis;
   inlineTokenizers.wordChoice = tokenizeWordChoice;
@@ -18,6 +20,7 @@ function whoa() {
   inlineTokenizers.search = tokenizeSearch;
 
   /* Run my tokenizers just before `text`. */
+  inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'revision');
   inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'redaction');
   inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'ellipsis');
   inlineMethods.splice(inlineMethods.indexOf('text'), 0, 'wordChoice');

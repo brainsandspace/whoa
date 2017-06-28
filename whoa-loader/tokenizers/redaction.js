@@ -1,5 +1,5 @@
 /**
- * A redaction is  a statement that begins with I should.
+ * A redaction is a statememnt like 🕵{statement}
  */
 const shortid = require('shortid');
 
