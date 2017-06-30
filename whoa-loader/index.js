@@ -1,7 +1,7 @@
 const frontmatter = require('front-matter');
 const unified = require('unified');
 const remarkParse = require('remark-parse');
-const remarkWhoa = require('./remark-whoa.js');
+const remarkWhoa = require('./remark-whoa/index.js');
 
 module.exports = function(content) {
   // this.cacheable();
