@@ -1,12 +1,9 @@
 {
   "name": "remark-whoa",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "not sure yet",
   "main": "index.js",
-  "keywords": [
-    "whoah",
-    "whoa"
-  ],
+  "keywords": ["whoah", "whoa"],
   "author": "David Baker",
   "license": "MIT",
   "dependencies": {
