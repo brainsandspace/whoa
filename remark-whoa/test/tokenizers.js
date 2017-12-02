@@ -6,7 +6,25 @@ const sampleWhoaText = require('./samples');
 
 let remark = new Remark().use(whoa);
 
-describe('tokenizers', () => {
+describe('block tokenizers', () => {
+  describe('timeLapse', () => {
+    const parsed = remark.parse(sampleWhoaText.timeLapse);
+    const timeLapseNode = parsed.children[0];
+
+    debugger;
+
+    it('should create an object with type "timeLapse"', () => {
+      timeLapseNode.type.should.equal('timeLapse');
+    });
+
+    it('should have the contents as its first child', () => {
+      timeLapseNode.children[0].type.should.equal('text');
+      timeLapseNode.children[0].value.should.equal('10 days later');
+    });
+  });
+});
+
+describe('inline tokenizers', () => {
   describe('normative', () => {
     const parsed = remark.parse(sampleWhoaText.normative);
     const childrenArr = parsed.children[0].children;
@@ -116,21 +134,6 @@ describe('tokenizers', () => {
     it('should have the contents as its first child', () => {
       tangentNode.children[0].type.should.equal('text');
       tangentNode.children[0].value.should.equal('This is a tangent.');
-    });
-  });
-
-  describe('timeLapse', () => {
-    const parsed = remark.parse(sampleWhoaText.timeLapse);
-    const childrenArr = parsed.children[0].children;
-    const timeLapseNode = childrenArr[0];
-
-    it('should create an object with type "timeLapse"', () => {
-      timeLapseNode.type.should.equal('timeLapse');
-    });
-
-    it('should have the contents as its first child', () => {
-      timeLapseNode.children[0].type.should.equal('text');
-      timeLapseNode.children[0].value.should.equal('10 days later');
     });
   });
 

@@ -30,10 +30,4 @@ function tokenizeTimeLapse(eat, value, silent) {
   }
 }
 
-function locateTimeLapse(value, fromIndex) {
-  return value.indexOf('...{', fromIndex);
-}
-
-tokenizeTimeLapse.locator = locateTimeLapse;
-
 module.exports = tokenizeTimeLapse;
