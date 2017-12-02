@@ -1,23 +1,22 @@
 /**
- * A revision is a statement like 
+ * A revision is a statement like
  * ✍{statement}
  * or ✍{statement}(hint)
- * 
- * ⚠ hint cannot contain parentheses!
+ *
+ * ⚠️ hint cannot contain parentheses!
  */
 const shortid = require('shortid');
 
 function tokenizeRevision(eat, value, silent) {
   // ⚠ the order of the regex OR groups matters (the parts seperated by pipes)
-  var match = /✍{([^✍]*)}\(([^\)]*)\)|✍{([^✍]*)}/.exec(value);
+  var match = /✍️{([^✍️]*)}\(([^\)]*)\)|✍️{([^✍️]*)}/.exec(value);
   var index = 0;
   // value.charAt(index) was not working with emoji...
   character = value.slice(index, 2);
   index++;
 
   if (match) {
-    console.log(value, character, match.index, JSON.stringify(match));
-    if (character.includes('✍') && match.index === 0) {
+    if (character.includes('✍️') && match.index === 0) {
       if (silent) {
         return true;
       }
@@ -43,7 +42,7 @@ function tokenizeRevision(eat, value, silent) {
 }
 
 function locateRevision(value, fromIndex) {
-  return value.indexOf('✍{', fromIndex);
+  return value.indexOf('✍️{', fromIndex);
 }
 
 tokenizeRevision.locator = locateRevision;

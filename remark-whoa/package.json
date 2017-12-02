@@ -1,18 +1,23 @@
 {
   "name": "remark-whoa",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "not sure yet",
   "main": "index.js",
-  "keywords": ["whoah", "whoa"],
+  "keywords": [
+    "whoah",
+    "whoa"
+  ],
   "author": "David Baker",
   "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
-    "front-matter": "^2.1.2",
-    "remark-parse": "^3.0.0",
-    "shortid": "^2.2.8",
-    "unified": "^6.1.1"
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
-    "babel-plugin-transform-react-jsx": "^6.23.0"
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "remark": "^8.0.0"
   }
 }

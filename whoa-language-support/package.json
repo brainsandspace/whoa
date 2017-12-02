@@ -1,55 +1,60 @@
 {
-    "name": "whoa",
-    "displayName": "whoa",
-    "description": "whoa",
-    "version": "0.0.2",
-    "publisher": "brainsandspace",
-    "engines": {
-        "vscode": "^1.11.0"
-    },
-    "categories": [
-        "Languages"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "markdown",
-                "aliases": [
-                    "Markdown",
-                    "markdown"
-                ],
-                "extensions": [
-                    ".md",
-                    ".markdown",
-                    ".whoa",
-                    ".whoah"
-                ],
-                "configuration": "./language-configuration-markdown.json"
-            },
-            {
-                "id": "whoa",
-                "aliases": [
-                    "Whoa",
-                    "whoa"
-                ],
-                "extensions": [
-                    ".whoa",
-                    ".whoah"
-                ],
-                "configuration": "./language-configuration-whoa.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "markdown",
-                "scopeName": "text.html.markdown",
-                "path": "./syntaxes/markdown.tmLanguage"
-            },
-            {
-                "language": "whoa",
-                "scopeName": "text.html.markdown.whoa",
-                "path": "./syntaxes/whoa.tmLanguage"
-            }
-        ]
-    }
+	"name": "whoa",
+	"displayName": "whoa",
+	"description": "whoa",
+	"version": "0.0.2",
+	"publisher": "brainsandspace",
+	"engines": {
+		"vscode": "^1.11.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "markdown",
+				"aliases": [
+					"Markdown",
+					"markdown"
+				],
+				"extensions": [
+					".md",
+					".markdown",
+					".whoa",
+					".whoah"
+				],
+				"configuration": "./language-configuration-markdown.json"
+			},
+			{
+				"id": "whoa",
+				"aliases": [
+					"Whoa",
+					"whoa"
+				],
+				"extensions": [
+					".whoa",
+					".whoah"
+				],
+				"configuration": "./language-configuration-whoa.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "markdown",
+				"scopeName": "text.html.markdown",
+				"path": "./syntaxes/markdown.tmLanguage"
+			},
+			{
+				"language": "whoa",
+				"scopeName": "text.html.markdown.whoa",
+				"path": "./syntaxes/whoa.tmLanguage"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "2906415b-fead-48f9-ad44-05f97bd78b6b",
+		"publisherDisplayName": "brainsandspace",
+		"publisherId": "f9091358-3173-45a1-8570-bdf2f4ac675d"
+	}
 }
