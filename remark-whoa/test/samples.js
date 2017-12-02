@@ -7,7 +7,7 @@ module.exports = {
   ],
   search: `🔎Search the google for me.🔍`,
   tangent: `|-This is a tangent.-|`,
-  timeLapse: `...{10 days later}`,
+  timeLapse: `... 10 days later`,
   wordChoice: [`{use, write, say}(?)`, 'befitting(?)'],
 
   heading: '# This is a h1.',
@@ -70,7 +70,7 @@ module.exports = {
   
   ___
   
-  ...{days LAtER...}
+  ... days LAtER...
   
   # The problem is I am building a thing that lets me work on multiple projects at the same time, and I can't work on multiple projects until it is functional (enough), so until then, I need to work exclusively on it. #yikes
   

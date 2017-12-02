@@ -1,3 +1,5 @@
+const tokenizeHeadingExample = require('./tokenizers/headingExample.js');
+
 const tokenizeTimeLapse = require('./tokenizers/timeLapse.js');
 const tokenizeRevision = require('./tokenizers/revision.js');
 const tokenizeRedaction = require('./tokenizers/redaction.js');
@@ -16,6 +18,7 @@ function whoa() {
   const inlineMethods = Parser.prototype.inlineMethods;
 
   blockTokenizers.timeLapse = tokenizeTimeLapse;
+  blockTokenizers.headingExample = tokenizeHeadingExample;
 
   inlineTokenizers.revision = tokenizeRevision;
   inlineTokenizers.redaction = tokenizeRedaction;
@@ -24,6 +27,7 @@ function whoa() {
   inlineTokenizers.normative = tokenizeNormative;
   inlineTokenizers.search = tokenizeSearch;
 
+  blockMethods.splice(blockMethods.indexOf('fencedCode'), 0, 'headingExample');
   blockMethods.splice(blockMethods.indexOf('paragraph'), 0, 'timeLapse');
 
   /* Run my tokenizers just before `text`. */

@@ -131,7 +131,7 @@ function headingExample(eat, value, silent) {
   subvalue += content + queue;
 
   return eat(subvalue)({
-    type: 'sheading',
+    type: 'heading',
     depth: depth,
     children: self.tokenizeInline(content, now),
   });
