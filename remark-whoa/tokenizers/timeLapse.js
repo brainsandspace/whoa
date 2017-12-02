@@ -2,6 +2,19 @@
  * A time lapse is a statement like ...{}
  */
 function tokenizeTimeLapse(eat, value, silent) {
+  // parts of this are copies directly from https://github.com/wooorm/remark/blob/master/packages/remark-parse/lib/tokenize/thematic-break.js
+  // and I doubt this is very stable
+  var length = value.length + 1;
+  var index = -1;
+  var character;
+  var subvalue = '';
+
+  while (++index < length) {
+    character = value.charAt(index);
+
+    subvalue += character;
+  }
+
   var match = /\.\.\.{(.*)}/.exec(value);
   var index = 0;
 
@@ -18,7 +31,7 @@ function tokenizeTimeLapse(eat, value, silent) {
       }
     const now = eat.now();
 
-    return eat(match[0])({
+    return eat(subvalue)({
       type: 'timeLapse',
       children: [
         {

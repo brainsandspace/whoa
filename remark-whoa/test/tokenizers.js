@@ -11,8 +11,6 @@ describe('block tokenizers', () => {
     const parsed = remark.parse(sampleWhoaText.timeLapse);
     const timeLapseNode = parsed.children[0];
 
-    debugger;
-
     it('should create an object with type "timeLapse"', () => {
       timeLapseNode.type.should.equal('timeLapse');
     });
@@ -167,5 +165,14 @@ describe('inline tokenizers', () => {
         wordChoiceNode.children[0].value.should.equal('befitting');
       });
     });
+  });
+});
+
+describe('full length sample', () => {
+  it('should parse', () => {
+    const parsed = remark.parse(sampleWhoaText.heading);
+  });
+  it('should parse', () => {
+    const parsed = remark.parse(sampleWhoaText.fullSample);
   });
 });

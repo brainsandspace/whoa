@@ -1,6 +1,6 @@
+const tokenizeTimeLapse = require('./tokenizers/timeLapse.js');
 const tokenizeRevision = require('./tokenizers/revision.js');
 const tokenizeRedaction = require('./tokenizers/redaction.js');
-const tokenizeTimeLapse = require('./tokenizers/timeLapse.js');
 const tokenizeWordChoice = require('./tokenizers/wordChoice.js');
 const tokenizeTangent = require('./tokenizers/tangent.js');
 const tokenizeNormative = require('./tokenizers/normative.js');
