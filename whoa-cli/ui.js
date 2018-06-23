@@ -26,7 +26,6 @@ class UI extends Component {
 
 	async componentDidMount() {
 		const whoaConfig = await findUp('whoa.json');
-		console.log(`whoaConfig`, whoaConfig);
 		if (whoaConfig) {
 			const { outputDirectory } = JSON.parse(fs.readFileSync(whoaConfig));
 			this.setState({
@@ -67,7 +66,6 @@ class UI extends Component {
 			this.state.outputDirectory,
 			`${new Date().toISOString().split('T')[0]}-${this.state.path}`
 		);
-
 		let result = '';
 		try {
 			fs.mkdirSync(folderPath);
