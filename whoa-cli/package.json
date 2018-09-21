@@ -1,6 +1,6 @@
 {
 	"name": "whoa-cli",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "a CLI for whoa",
 	"license": "MIT",
 	"repository": "davvidbaker/whoa-cli",

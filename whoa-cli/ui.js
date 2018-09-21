@@ -16,6 +16,7 @@ class UI extends Component {
 			phase: 'title',
 			title: '',
 			path: '',
+			date: '',
 			hashtags: '',
 		};
 
@@ -32,7 +33,7 @@ class UI extends Component {
 				foundWhoaConfig: true,
 				outputDirectory: path.resolve(
 					path.dirname(whoaConfig),
-					outputDirectory
+					outputDirectory,
 				),
 			});
 		}
@@ -49,6 +50,9 @@ class UI extends Component {
 				nextPhase = 'path';
 				break;
 			case 'path':
+				nextPhase = 'date';
+				break;
+			case 'date':
 				nextPhase = 'hashtags';
 				break;
 			case 'hashtags':
@@ -62,9 +66,14 @@ class UI extends Component {
 	}
 
 	writeFile() {
+		const dateIso =
+			this.state.date.length > 0
+				? new Date(this.state.date).toISOString()
+				: new Date().toISOString();
+
 		const folderPath = path.resolve(
 			this.state.outputDirectory,
-			`${new Date().toISOString().split('T')[0]}-${this.state.path}`
+			`${dateIso.split('T')[0]}-${this.state.path}`,
 		);
 		let result = '';
 		try {
@@ -75,8 +84,8 @@ class UI extends Component {
 title: ${this.state.title}
 path: ${this.state.path}
 hashtags: [${this.state.hashtags.split(/(\s)|(,\s?)/)}]
-date: ${new Date().toISOString()}
----`
+date: ${dateIso}
+---`,
 			);
 			result = 'Success! 🤑';
 		} catch (e) {
@@ -105,13 +114,20 @@ date: ${new Date().toISOString()}
 				<div>
 					{(this.state.phase === 'path' ||
 						this.state.phase === 'hashtags' ||
-						this.state.phase === 'result') && (
+						this.state.phase === 'result' ||
+						this.state.phase === 'date') && (
 						<div>title: {this.state.title}</div>
 					)}
 
 					{(this.state.phase === 'hashtags' ||
+						this.state.phase === 'date' ||
 						this.state.phase === 'result') && (
 						<div>path: {this.state.path}</div>
+					)}
+
+					{(this.state.phase === 'hashtags' ||
+						this.state.phase === 'result') && (
+						<div>date: {this.state.date}</div>
 					)}
 
 					{this.state.phase === 'result' && (
@@ -127,10 +143,12 @@ date: ${new Date().toISOString()}
 								value={this.state[this.state.phase]}
 								placeholder={
 									this.state.phase === 'hashtags'
-										? 'seperate values with a space or comma'
+										? 'BROKEN seperate values with a space or comma'
 										: this.state.phase === 'path'
 											? 'a URL-safe string please'
-											: null
+											: this.state.phase === 'date'
+												? 'leave it blank for right meow'
+												: null
 								}
 								onChange={v => this.handleChange(this.state.phase, v)}
 								onSubmit={this.nextInput}
